@@ -21,11 +21,24 @@ play: function () {
     this.happiness += 20;
     if(this.happiness > 100){
         this.happiness = 100;
-    }
+    }   
+    alert(`${this.name} is so happy! Happiness level is now ${this.happiness}.`); 
+},
 
-    
-    
-}
+
+agepet: function () {
+    this.happiness -= 5;
+        this.hunger += 10;
+
+        if (this.happiness < 0) {
+            this.happiness = 0;
+        }
+        if (this.hunger > 100) {
+            this.hunger = 100;
+        }
+
+        alert(`${this.name} is now ${this.age} years old! Happiness: ${this.happiness}, Hunger: ${this.hunger}`);
+    }
 
 
 
