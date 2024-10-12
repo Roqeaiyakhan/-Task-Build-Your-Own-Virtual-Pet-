@@ -16,7 +16,16 @@ let pet = {
     },
 
 
+// play 
+play: function () {
+    this.happiness += 20;
+    if(this.happiness > 100){
+        this.happiness = 100;
+    }
 
+    
+    
+}
 
 
 
