@@ -22,7 +22,7 @@ play: function () {
     if(this.happiness > 100){
         this.happiness = 100;
     }   
-    alert(`${this.name} is so happy! Happiness level is now ${this.happiness}.`); 
+    alert(`${this.name} is  happeir! Happiness level is now ${this.happiness}.`); 
 },
 
 
@@ -38,18 +38,21 @@ agepet: function () {
         }
 
         alert(`${this.name} is now ${this.age} years old! Happiness: ${this.happiness}, Hunger: ${this.hunger}`);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
+    },
 
 }
+
+    
+let action;
+do {
+    action = prompt("Choose an action for your pet: 'feed', 'play', 'age', or 'exit' to quit.").toLowerCase();
+    switch (action) {
+        case 'feed':
+            pet.feed();
+            break;
+        case 'play':
+
+
+
+    }
+};
