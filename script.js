@@ -2,48 +2,28 @@ let pet = {
     name: "puppy",
     type: "dog",
     age: 3,
-   happiness: 66,
-   hunger: 70,
+    happiness: 66,
+    hunger: 70,
 
-//    feeding method
-    feed: function(){
-    this.hunger -= 20;
-    if (this.hunger < 0) {
-        this.hunger = 0;
+    // Feeding method
+    feed() {
+        this.hunger = Math.max(this.hunger - 15, 0);
+        alert(`${this.name} is fed! Current hunger level: ${this.hunger}`);
+    },
+
+    // Playing with the pet increases happiness 
+    play() {
+        this.happiness = Math.min(this.happiness + 15, 100);
+        alert(`${this.name} is having fun! Happiness level is now ${this.happiness}`);
+    },
+
+    age() {
+        this.age++;
+        alert(`${this.name} is now ${this.age} years old!`);
     }
-    alert(`${this.name} has been feed! hunger level is now ${this.hunger}.`)
+};
 
-    },
-
-
-// play 
-play: function () {
-    this.happiness += 20;
-    if(this.happiness > 100){
-        this.happiness = 100;
-    }   
-    alert(`${this.name} is  happeir! Happiness level is now ${this.happiness}.`); 
-},
-
-
-agepet: function () {
-    this.happiness -= 5;
-        this.hunger += 10;
-
-        if (this.happiness < 0) {
-            this.happiness = 0;
-        }
-        if (this.hunger > 100) {
-            this.hunger = 100;
-        }
-
-        alert(`${this.name} is now ${this.age} years old! Happiness: ${this.happiness}, Hunger: ${this.hunger}`);
-    },
-
-}
-
-    
-let action;
+ var action;
 do {
     action = prompt("Choose an action for your pet: 'feed', 'play', 'age', or 'exit' to quit.").toLowerCase();
     switch (action) {
@@ -51,8 +31,16 @@ do {
             pet.feed();
             break;
         case 'play':
-
-
-
+            pet.play();
+            break;
+        case 'age':
+            pet.growOlder();
+            break;
+        case 'exit':
+            alert("Thanks for taking care of your pet. Goodbye!");
+            break;
+        default:
+            alert("Oops! That's not a valid action. Try 'feed', 'play', 'age', or 'exit'.");
     }
-};
+} while (action !== 'exit');
+
